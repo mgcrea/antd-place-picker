@@ -921,11 +921,7 @@
       "metadata": {"mapbox:group": "1444855769305.6016"},
       "source": "composite",
       "source-layer": "road",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "structure", "tunnel"], ["==", "type", "trunk"]]
-      ],
+      "filter": ["all", ["==", "$type", "LineString"], ["all", ["==", "structure", "tunnel"], ["==", "type", "trunk"]]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": {
@@ -1066,11 +1062,7 @@
       "metadata": {"mapbox:group": "1444855769305.6016"},
       "source": "composite",
       "source-layer": "road",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "structure", "tunnel"], ["==", "type", "steps"]]
-      ],
+      "filter": ["all", ["==", "$type", "LineString"], ["all", ["==", "structure", "tunnel"], ["==", "type", "steps"]]],
       "layout": {"line-join": "round"},
       "paint": {
         "line-width": {
@@ -1628,11 +1620,7 @@
       "source": "composite",
       "source-layer": "road",
       "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "class", "street"], ["==", "structure", "none"]]
-      ],
+      "filter": ["all", ["==", "$type", "LineString"], ["all", ["==", "class", "street"], ["==", "structure", "none"]]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": {
@@ -2611,11 +2599,7 @@
       "metadata": {"mapbox:group": "1444855799204.86"},
       "source": "composite",
       "source-layer": "road",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "structure", "bridge"], ["==", "type", "steps"]]
-      ],
+      "filter": ["all", ["==", "$type", "LineString"], ["all", ["==", "structure", "bridge"], ["==", "type", "steps"]]],
       "layout": {"line-join": "round"},
       "paint": {
         "line-width": {
@@ -5256,12 +5240,7 @@
       "source": "composite",
       "source-layer": "place_label",
       "maxzoom": 14,
-      "filter": [
-        "all",
-        ["in", "ldir", "E", "S", "SE", "SW"],
-        ["in", "scalerank", 3, 4, 5],
-        ["==", "type", "city"]
-      ],
+      "filter": ["all", ["in", "ldir", "E", "S", "SE", "SW"], ["in", "scalerank", 3, 4, 5], ["==", "type", "city"]],
       "layout": {
         "text-field": "{name_en}",
         "icon-image": "dot-10",
@@ -5315,12 +5294,7 @@
       "source": "composite",
       "source-layer": "place_label",
       "maxzoom": 14,
-      "filter": [
-        "all",
-        ["in", "ldir", "N", "NE", "NW", "W"],
-        ["in", "scalerank", 3, 4, 5],
-        ["==", "type", "city"]
-      ],
+      "filter": ["all", ["in", "ldir", "N", "NE", "NW", "W"], ["in", "scalerank", 3, 4, 5], ["==", "type", "city"]],
       "layout": {
         "icon-image": "dot-10",
         "text-font": {

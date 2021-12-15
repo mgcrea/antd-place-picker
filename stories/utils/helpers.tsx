@@ -1,14 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {useArgs} from '@storybook/addons';
 import {ArgTypes, ComponentStory} from '@storybook/react';
-import React, {
-  ComponentProps,
-  createElement,
-  FunctionComponent,
-  JSXElementConstructor,
-  useEffect,
-  useState,
-} from 'react';
+import React, {ComponentProps, createElement, JSXElementConstructor, useEffect, useState} from 'react';
 import {Label, StoryContainer, StoryContainerProps} from './components';
 import {storybookSizeOptions} from './size';
 
