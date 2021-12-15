@@ -1,0 +1,13 @@
+diff --git a/node_modules/@storybook/source-loader/dist/cjs/abstract-syntax-tree/parse-helpers.js b/node_modules/@storybook/source-loader/dist/cjs/abstract-syntax-tree/parse-helpers.js
+index 1a9a63b..5040657 100644
+--- a/node_modules/@storybook/source-loader/dist/cjs/abstract-syntax-tree/parse-helpers.js
++++ b/node_modules/@storybook/source-loader/dist/cjs/abstract-syntax-tree/parse-helpers.js
+@@ -83,7 +83,7 @@ function findTemplate(templateName, program) {
+ 
+     if (node.type === 'VariableDeclaration') {
+       declarations = node.declarations;
+-    } else if (node.type === 'ExportNamedDeclaration' && node.declaration.type === 'VariableDeclaration') {
++    } else if (node.type === 'ExportNamedDeclaration' && node.declaration?.type === 'VariableDeclaration') {
+       declarations = node.declaration.declarations;
+     }
+ 

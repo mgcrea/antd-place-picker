@@ -1,0 +1,14 @@
+import {Meta, Story, Canvas, ArgsTable} from '@storybook/addon-docs';
+import {MapPin, meta, Default} from './MapPin.story';
+
+# MapPin
+
+<Meta title={meta.title} component={meta.component} argTypes={meta.argTypes} args={meta.args} />
+
+## Default
+
+<Canvas>
+  <Story name="Default">{Default}</Story>
+</Canvas>
+
+<ArgsTable of={MapPin} story="^" />

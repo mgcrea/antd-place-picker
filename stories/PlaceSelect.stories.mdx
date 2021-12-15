@@ -1,0 +1,14 @@
+import {Meta, Story, Canvas, ArgsTable} from '@storybook/addon-docs';
+import {PlaceSelect, meta, Default} from './PlaceSelect.story';
+
+# PlaceSelect
+
+<Meta title={meta.title} component={meta.component} argTypes={meta.argTypes} args={meta.args} />
+
+## Default
+
+<Canvas>
+  <Story name="Default">{Default}</Story>
+</Canvas>
+
+<ArgsTable of={PlaceSelect} story="^" />

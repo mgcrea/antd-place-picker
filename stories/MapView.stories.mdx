@@ -1,0 +1,14 @@
+import {Meta, Story, Canvas, ArgsTable} from '@storybook/addon-docs';
+import {MapView, meta, Default} from './MapView.story';
+
+# MapView
+
+<Meta title={meta.title} component={meta.component} argTypes={meta.argTypes} args={meta.args} />
+
+## Default
+
+<Canvas>
+  <Story name="Default">{Default}</Story>
+</Canvas>
+
+<ArgsTable of={MapView} story="^" />
