@@ -3,5 +3,6 @@
 .vscode/
 *.local
 *.tgz
+docs/
 lib/
 node_modules/
