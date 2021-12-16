@@ -16,11 +16,7 @@ export const meta: ComponentMeta<typeof MapPin> = {
 
 export default meta;
 
-const DefaultTemplate: FunctionComponent<MapPinProps> = (props) => (
-  <div style={{margin: '50px 25px'}}>
-    <MapPin {...props} />
-  </div>
-);
+const DefaultTemplate: FunctionComponent<MapPinProps> = (props) => <MapPin {...props} />;
 export const Default = DefaultTemplate.bind({});
 
 // const TypeTemplate: ComponentStory<typeof MapPin> = declineTemplate(DefaultTemplate, {

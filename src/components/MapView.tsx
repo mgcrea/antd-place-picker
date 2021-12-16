@@ -4,7 +4,6 @@ import type {CameraOptions} from 'mapbox-gl';
 import React, {
   forwardRef,
   ForwardRefRenderFunction,
-  HTMLProps,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -12,36 +11,29 @@ import React, {
   useState,
 } from 'react';
 import {InteractiveMap, InteractiveMapProps, MapLoadEvent, MapRef, Marker, ViewState} from 'react-map-gl';
+import {globalDefaults, mapViewDefaults} from 'src/config';
 import {MapPin} from './MapPin';
 import './style/map-view.less';
 
-const {REACT_APP_MAPBOX_API_ACCESS_TOKEN: defaultAccessToken} = process.env;
-
-export const mapViewDefaultProps = {
-  locale: 'fr',
-  mapStyle: 'mapbox://styles/mapbox/streets-v11',
-  defaultViewport: {
-    latitude: 48.864716,
-    longitude: 2.349014,
-    zoom: 10,
-  },
+export type MapViewProps = Omit<
+  InteractiveMapProps,
+  'width' | 'height' | 'longitude' | 'latitude' | 'zoom' | 'locale'
+> & {
+  accessToken?: string;
+  width?: number | string;
+  height?: number | string;
+  locale?: string;
+  viewport?: ViewState | null;
+  defaultViewport?: ViewState | null;
+  flyMode?: boolean;
 };
-
-export type MapViewProps = HTMLProps<HTMLDivElement> &
-  Omit<InteractiveMapProps, 'width' | 'height' | 'longitude' | 'latitude' | 'zoom' | 'locale'> & {
-    width?: number | string;
-    height?: number | string;
-    locale?: string;
-    viewport?: ViewState | null;
-    defaultViewport?: ViewState | null;
-    flyMode?: boolean;
-  };
 
 const MapViewRenderFunction: ForwardRefRenderFunction<MapRef, MapViewProps> = (
   {
-    locale = mapViewDefaultProps.locale,
-    mapStyle = mapViewDefaultProps.mapStyle,
-    defaultViewport = mapViewDefaultProps.defaultViewport,
+    accessToken = globalDefaults.accessToken,
+    locale = mapViewDefaults.locale,
+    mapStyle = mapViewDefaults.mapStyle,
+    defaultViewport = mapViewDefaults.defaultViewport,
     onLoad,
     viewport: propViewport,
     flyMode = true,
@@ -100,7 +92,7 @@ const MapViewRenderFunction: ForwardRefRenderFunction<MapRef, MapViewProps> = (
   return (
     <InteractiveMap
       ref={mapRef}
-      mapboxApiAccessToken={defaultAccessToken}
+      mapboxApiAccessToken={accessToken}
       mapStyle={mapStyle}
       onLoad={handleLoad}
       onViewportChange={setViewport}
@@ -111,7 +103,7 @@ const MapViewRenderFunction: ForwardRefRenderFunction<MapRef, MapViewProps> = (
     >
       {showMapPin && propViewport ? (
         <Marker longitude={propViewport.longitude} latitude={propViewport.latitude}>
-          <MapPin size={32} />
+          <MapPin centered size={32} />
         </Marker>
       ) : null}
     </InteractiveMap>

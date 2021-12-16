@@ -7,41 +7,25 @@ import Geocoding, {
 import Select, {LabeledValue, SelectProps} from 'antd/lib/select';
 import 'antd/lib/select/style/index.less';
 import React, {FunctionComponent, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {globalDefaults, placeSelectDefaults} from 'src/config';
 import {useDebounce, useIsMounted} from '../hooks';
 import {classNames} from '../utils';
 import './style/place-select.less';
 
-const {REACT_APP_MAPBOX_API_ACCESS_TOKEN: defaultAccessToken} = process.env;
-
 // @NOTE GeocodeFeature['id'] does not properly resolve back a full place_name
 export type PlaceSelectValue = GeocodeFeature['place_name'];
-
 export type PlaceSelectProps = SelectProps<PlaceSelectValue> &
   Pick<GeocodeRequest, 'countries' | 'language' | 'proximity' | 'limit'> & {
     accessToken?: string;
-    // value?: PlaceSelectValue;
-    // onChange?: (value: PlaceSelectValue) => void;
     onFeatureSelect?: (feature: GeocodeFeature) => void;
   };
-
-const optionFromFeature = (feature: GeocodeFeature): LabeledValue => ({
-  label: feature.place_name,
-  value: feature.id,
-});
-
-export const placeSelectDefaults: Pick<GeocodeRequest, 'countries' | 'language' | 'proximity' | 'limit'> = {
-  countries: ['FR'],
-  language: ['fr-FR'],
-  proximity: [2.349014, 48.864716],
-  limit: 5,
-};
 
 export const PlaceSelect: FunctionComponent<PlaceSelectProps> = ({
   className,
   value,
   onChange,
   onFeatureSelect,
-  accessToken = defaultAccessToken || '',
+  accessToken = globalDefaults.accessToken,
   countries = placeSelectDefaults.countries,
   language = placeSelectDefaults.language,
   proximity = placeSelectDefaults.proximity,
@@ -130,3 +114,8 @@ export const PlaceSelect: FunctionComponent<PlaceSelectProps> = ({
     />
   );
 };
+
+const optionFromFeature = (feature: GeocodeFeature): LabeledValue => ({
+  label: feature.place_name,
+  value: feature.id,
+});

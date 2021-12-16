@@ -10,6 +10,7 @@ export type PlacePickerProps = Pick<HTMLProps<HTMLDivElement>, 'style' | 'classN
   PlaceSelectProps & {defaultCoordinates?: [number, number]; flyToZoom?: number};
 
 export const PlacePicker: FunctionComponent<PlacePickerProps> = ({
+  accessToken,
   className,
   flyToZoom = 16,
   defaultCoordinates,
@@ -53,9 +54,15 @@ export const PlacePicker: FunctionComponent<PlacePickerProps> = ({
 
   return (
     <div className={classNames('ant-place-picker', className)} style={style}>
-      <PlaceSelect onFeatureSelect={handleFeatureSelect} limit={6} style={{width: '100%'}} {...otherProps} />
+      <PlaceSelect
+        accessToken={accessToken}
+        onFeatureSelect={handleFeatureSelect}
+        limit={6}
+        style={{width: '100%'}}
+        {...otherProps}
+      />
       <div className="ant-place-picker-map-view">
-        {mapIsVisible ? <MapView viewport={viewport} /> : <Spin size="large" />}
+        {mapIsVisible ? <MapView accessToken={accessToken} viewport={viewport} /> : <Spin size="large" />}
       </div>
     </div>
   );
