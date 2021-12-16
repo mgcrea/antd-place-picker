@@ -1,7 +1,7 @@
 {
   "name": "@mgcrea/antd-place-picker",
   "description": "AntDesign powered PlacePicker leveraging react-map-gl",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "./lib/umd/index.js",
   "module": "./lib/esm/index.js",
