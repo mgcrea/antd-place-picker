@@ -2,7 +2,7 @@ import {ComponentMeta} from '@storybook/react';
 import React, {FunctionComponent} from 'react';
 import {PlacePicker, PlacePickerProps} from '../src/components';
 
-import {storybookSizeArgTypes, titlePrefix} from './utils';
+import {MAPBOX_API_ACCESS_TOKEN, storybookSizeArgTypes, titlePrefix} from './utils';
 export {PlacePicker};
 
 export const meta: ComponentMeta<typeof PlacePicker> = {
@@ -12,6 +12,7 @@ export const meta: ComponentMeta<typeof PlacePicker> = {
     ...storybookSizeArgTypes,
   },
   args: {
+    accessToken: MAPBOX_API_ACCESS_TOKEN,
     placeholder: 'Type an address',
   },
 };

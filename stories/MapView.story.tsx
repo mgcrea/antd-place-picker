@@ -2,7 +2,7 @@ import {ComponentMeta} from '@storybook/react';
 import React, {FunctionComponent} from 'react';
 import {MapView, MapViewProps} from '../src/components';
 
-import {storybookSizeArgTypes, titlePrefix} from './utils';
+import {MAPBOX_API_ACCESS_TOKEN, storybookSizeArgTypes, titlePrefix} from './utils';
 export {MapView};
 
 export const meta: ComponentMeta<typeof MapView> = {
@@ -16,6 +16,7 @@ export const meta: ComponentMeta<typeof MapView> = {
   args: {
     width: 320,
     height: 240,
+    accessToken: MAPBOX_API_ACCESS_TOKEN,
   },
 };
 

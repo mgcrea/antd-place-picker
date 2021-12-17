@@ -39,6 +39,7 @@ npm install @mgcrea/antd-place-picker
 import React from 'react';
 import {Form, FormProps} from 'antd';
 import {PlacePicker} from '@mgcrea/antd-place-picker';
+import '@mgcrea/antd-place-picker/lib/esm/style.less';
 
 function App() {
   const onSubmit = (data) => console.log(data);

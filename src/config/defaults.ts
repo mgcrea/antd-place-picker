@@ -1,8 +1,7 @@
 import type {MapViewProps, PlaceSelectProps} from 'src/components';
-import {MAPBOX_API_ACCESS_TOKEN} from './env';
 
 export const globalDefaults = {
-  accessToken: MAPBOX_API_ACCESS_TOKEN || '',
+  accessToken: '',
 };
 
 export const placeSelectDefaults: Required<Pick<PlaceSelectProps, 'countries' | 'language' | 'proximity' | 'limit'>> = {
