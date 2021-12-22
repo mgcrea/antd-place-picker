@@ -7,7 +7,7 @@ import Geocoding, {
 import Select, {LabeledValue, SelectProps} from 'antd/lib/select';
 import 'antd/lib/select/style/index.less';
 import React, {FunctionComponent, useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {globalDefaults, placeSelectDefaults} from 'src/config';
+import {globalDefaults, placeSelectDefaults} from '../config';
 import {useDebounce, useIsMounted} from '../hooks';
 import {classNames} from '../utils';
 import './style/place-select.less';

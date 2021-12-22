@@ -11,7 +11,7 @@ import React, {
   useState,
 } from 'react';
 import {InteractiveMap, InteractiveMapProps, MapLoadEvent, MapRef, Marker, ViewState} from 'react-map-gl';
-import {globalDefaults, mapViewDefaults} from 'src/config';
+import {globalDefaults, mapViewDefaults} from '../config';
 import {MapPin} from './MapPin';
 import './style/map-view.less';
 

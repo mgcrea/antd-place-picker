@@ -1,4 +1,4 @@
-import type {MapViewProps, PlaceSelectProps} from 'src/components';
+import type {MapViewProps, PlaceSelectProps} from '../components';
 
 export const globalDefaults = {
   accessToken: '',
