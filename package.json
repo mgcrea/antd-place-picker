@@ -1,7 +1,7 @@
 {
   "name": "@mgcrea/antd-place-picker",
   "description": "AntDesign powered PlacePicker leveraging react-map-gl",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "main": "./lib/umd/index.js",
   "module": "./lib/esm/index.js",
@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "test": "npm run lint && npm run prettycheck && npm run typecheck",
     "docs": "build-storybook -o ./docs",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "antd": ">=4.17",
