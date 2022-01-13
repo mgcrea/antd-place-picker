@@ -39,6 +39,7 @@ export const PlaceSelect: FunctionComponent<PlaceSelectProps> = ({
   const isMounted = useIsMounted();
 
   const handleSelect = useCallback<NonNullable<SelectProps<PlaceSelectValue>['onSelect']>>(
+    // @ts-expect-error SelectHandler<PlaceSelectValue> bug
     (value, option) => {
       const feature = latestFeatures.current.find((feature) => feature.id === value);
       if (!feature) {
