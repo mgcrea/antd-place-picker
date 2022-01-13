@@ -1,3 +1,5 @@
+<!-- markdownlint-disable no-inline-html -->
+
 # antd-place-picker
 
 <p align="center">
